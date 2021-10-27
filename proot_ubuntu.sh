@@ -1,5 +1,5 @@
 # copy by https://gxmersam.blogspot.com/. thanks you
-apt update && apt upgrade && apt install sudo curl -y
+apt update -y && apt upgrade -y && apt install sudo curl -y
 adduser tab
 echo "sammy ALL=(ALL:ALL) ALL" > /etc/sudoers
 su - tab

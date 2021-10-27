@@ -11,6 +11,6 @@ pulseaudio --start --exit-idle-time=-1
 pacmd load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1
 
 # ubuntu alias 사라진듯
-echo "alias uboot=proot-distro login --user tab ubuntu" >> ${root}/usr/etc/bash.bashrc
+echo 'alias uboot="proot-distro login --user tab ubuntu"' >> ${root}/usr/etc/bash.bashrc
 proot-distro install ubuntu
 proot-distro login ubuntu
