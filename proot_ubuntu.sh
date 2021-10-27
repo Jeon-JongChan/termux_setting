@@ -1,8 +1,4 @@
 # copy by https://gxmersam.blogspot.com/. thanks you
-apt update -y && apt upgrade -y && apt install sudo curl -y
-adduser tab
-echo "sammy ALL=(ALL:ALL) ALL" > /etc/sudoers
-su - tab
 # vnc 설치 및 gui 프로그램과 터미널 설치
 # openbox는 저사양GUI로 코딩이나 웹 서치만 할 경우 유용하다 판단해서 냅둠
 apt install tigervnc-standalone-server openbox xterm -y
