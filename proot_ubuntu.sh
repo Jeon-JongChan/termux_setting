@@ -3,7 +3,7 @@
 # openbox는 저사양GUI로 코딩이나 웹 서치만 할 경우 유용하다 판단해서 냅둠
 # sudo apt install tigervnc-standalone-server openbox xterm -y
 # openbox는 너무 구려서 xfce4로 전환
-sudo apt install tigervnc-standalone-server xfce4 xfce-terminal -y
+sudo apt install tigervnc-standalone-server xfce4 -y
 sudo apt clean
 # vnc server shell 제작
 echo "rm ~/.vnc/localhost*" >> ~/vnc.sh
