@@ -2,7 +2,7 @@
 root=/data/data/com.termux/files
 uroot=/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu
 # ****termux ubuntu 설치 및 설정 시작
-pkg update -y && pkg upgrade && pkg install proot-distro pulseaudio -y
+pkg update -y && pkg upgrade && pkg install wget proot-distro pulseaudio -y
 # termux sound set
 pulseaudio --start --exit-idle-time=-1
 pacmd load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1
