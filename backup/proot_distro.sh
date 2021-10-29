@@ -17,3 +17,5 @@ wget https://raw.githubusercontent.com/Jeon-JongChan/termux_setting/master/proot
 cd ~
 rm termux-prefix-switcher proot_switch.sh proot_distro.sh
 proot-distro login ubuntu
+
+# termux 권한 허용을 해줘야 이 스크립트는 작동할듯
