@@ -23,3 +23,5 @@ echo "export BOX86_PATH=~/wine/bin/" >> ~/.profile
 echo "export BOX86_LD_LIBRARY_PATH=~/wine/lib/" >> ~/.profile
 echo "export BOX86_LOG=1" >> ~/.profile
 echo 'alias wboot="box86 wine"' >> ~/.profile
+
+ wget https://raw.githubusercontent.com/Jeon-JongChan/termux_setting/master/install/install_tool.sh && chmod +x install_tool.sh
