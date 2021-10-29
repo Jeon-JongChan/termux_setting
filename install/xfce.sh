@@ -21,17 +21,17 @@ echo '#!/bin/bash
 export PULSE_SERVER=127.0.0.1
 XAUTHORITY=$HOME/.Xauthority
 export XAUTHORITY
-LANG=en_US.UTF-8
+#LANG=en_US.UTF-8
 export LANG
 echo $$ > /tmp/xsession.pid
-dbus-launch --exit-with-session startxfce4 &' > ~/.vnc/xstartup
+#dbus-launch --exit-with-session startxfce4 &' > ~/.vnc/xstartup
 chmod +x ~/.vnc/xstartup
 
 # tigervnc 편의를 위한 설정 - .profile
-#echo "export DISPLAY=":1"" >> /etc/profile
+echo "export DISPLAY=":1"" >> /etc/profile
 # vnc 명령어
 touch /usr/local/bin/vnc && chmod +x /usr/local/bin/vnc
-echo 'LD_PRELOAD=vncserver -localhost no -depth 24 -name remote-desktop -AcceptSetDesktopSize=0 $GEO :$PORT
+echo 'vncserver -xstartup /usr/bin/startxfce4 -localhost no -depth 24 -name remote-desktop -AcceptSetDesktopSize=0 ${GEO} :${PORT}
 echo "VNC server started. The default password is the account password for $USER"
 ' >> /usr/local/bin/vnc
 
@@ -85,7 +85,6 @@ exit() {
     vncserver -kill :1
   fi
   
-  #unset LD_PRELOAD
   unset -f exit
   exit
 }' >> ~/.profile
