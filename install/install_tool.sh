@@ -100,31 +100,29 @@ function ibus() {
 }
 echo "termux ubuntu program installer."
 echo "double number is remove(ex. 1 install 11 remove)"
-echo "1. install cromium"
-echo "2. install vscode"
-echo "3. install ibus"
-echo "4. install grapejuice(roblox studio)"
-echo "5. install box86"
-echo "6. install box86_64"
+echo "1. install ibus"
+echo "2. install cromium"
+echo "3. install vscode"
+echo "4. install box86"
+echo "5. install box86_64"
+echo "6. install grapejuice(roblox studio)"
 
 echo -n "select number : "
 read program
 echo ""
 
 if [ ${program} -eq 1 ]; then
-    echo "********** install cromium **********"
-    cromium
-elif [ ${program} -eq 2 ]; then
-    vscode
-elif [ ${program} -eq 3 ]; then
     ibus
+elif [ ${program} -eq 2 ]; then
+    cromium
+elif [ ${program} -eq 3 ]; then
+    vscode
 elif [ ${program} -eq 4 ]; then
-    echo "********** install roblox studio **********"
-    roblox
-elif [ ${program} -eq 5 ]; then
     box86
-elif [ ${program} -eq 6 ]; then
+elif [ ${program} -eq 5 ]; then
     box86_64
+elif [ ${program} -eq 6 ]; then
+    roblox
 elif [ ${program} -eq 55 ]; then
     remove_box86
 fi
