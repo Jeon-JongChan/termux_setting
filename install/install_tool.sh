@@ -4,7 +4,7 @@ echo "1. install cromium"
 echo "2. install vscode"
 echo "3. install grapejuice(roblox studio)"
 
-echo -e "select number : "
+echo -n "select number : "
 read program
 echo ""
 
@@ -12,16 +12,16 @@ if [${program} -eq 1]; then
     echo "********** install cromium **********"
     cromium
 elif [${program} -eq 11]; then
+    echo "not remove"
 elif [${program} -eq 2]; then
     vscode
 elif [${program} -eq 22]; then
+    echo "not remove"
 elif [${program} -eq 3]; then
     echo "********** install roblox studio **********"
     roblox
 elif [${program} -eq 33]; then
     echo "not remove"
-elif [${program} -eq 4]; then
-elif [${program} -eq 44]; then
 fi
 
 function vscode() {
@@ -67,6 +67,6 @@ function roblox() {
     sudo apt install -y libcairo2-dev gtk-update-icon-cache desktop-file-utils xdg-utils libgirepository1.0-dev gir1.2-gtk-3.0
 
     git clone https://gitlab.com/brinkervii/grapejuice.git /tmp/grapejuice
-    cd /tmp/grapejuice
+    cd ~/grapejuice
     python3 ./install.py
 }
