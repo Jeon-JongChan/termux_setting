@@ -1,3 +1,6 @@
+rm -rf /etc/resolv.conf
+echo 'nameserver 8.8.8.8' >> /etc/resolv.conf
+
 # xfce4 and tigervnc install
  wget https://raw.githubusercontent.com/Jeon-JongChan/termux_setting/master/install/xfce.sh && chmod +x xfce.sh
 ./xfce.sh

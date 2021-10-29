@@ -27,11 +27,11 @@ echo $$ > /tmp/xsession.pid
 dbus-launch --exit-with-session startxfce4 &' > ~/.vnc/xstartup
 chmod +x ~/.vnc/xstartup
 
-echo "export DISPLAY=":1"" >> /etc/profile
 # tigervnc 편의를 위한 설정 - .profile
+#echo "export DISPLAY=":1"" >> /etc/profile
 # vnc 명령어
 touch /usr/local/bin/vnc && chmod +x /usr/local/bin/vnc
-echo 'LD_PRELOAD=/lib/aarch64-linux-gnu/libgcc_s.so.1 vncserver -localhost no -depth 24 -name remote-desktop -AcceptSetDesktopSize=0 $GEO :$PORT
+echo 'LD_PRELOAD=vncserver -localhost no -depth 24 -name remote-desktop -AcceptSetDesktopSize=0 $GEO :$PORT
 echo "VNC server started. The default password is the account password for $USER"
 ' >> /usr/local/bin/vnc
 
@@ -68,6 +68,7 @@ case $CHOICE in
 		;;
 esac
 ' >> /usr/local/bin/vncserver-start
+chmod +x /usr/local/bin/vncserver-start
 
 echo '
 if [ ! -z `which vncserver` ]; then
