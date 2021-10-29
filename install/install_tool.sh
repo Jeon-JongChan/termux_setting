@@ -3,9 +3,9 @@ echo "double number is remove(ex. 1 install 11 remove)"
 echo "1. install cromium"
 echo "2. install vscode"
 echo "3. install ibus"
-echo "3. install grapejuice(roblox studio)"
-echo "4. install box86"
-echo "5. install box86_64"
+echo "4. install grapejuice(roblox studio)"
+echo "5. install box86"
+echo "6. install box86_64"
 
 echo -n "select number : "
 read program
