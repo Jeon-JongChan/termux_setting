@@ -3,6 +3,8 @@ echo "double number is remove(ex. 1 install 11 remove)"
 echo "1. install cromium"
 echo "2. install vscode"
 echo "3. install grapejuice(roblox studio)"
+echo "4. install box86"
+echo "5. install box86_64"
 
 echo -n "select number : "
 read program
@@ -11,19 +13,21 @@ echo ""
 if [${program} -eq 1]; then
     echo "********** install cromium **********"
     cromium
-elif [${program} -eq 11]; then
-    echo "not remove"
 elif [${program} -eq 2]; then
     vscode
-elif [${program} -eq 22]; then
-    echo "not remove"
 elif [${program} -eq 3]; then
     echo "********** install roblox studio **********"
     roblox
-elif [${program} -eq 33]; then
-    echo "not remove"
 elif [${program} -eq 4]; then
     box86
+elif [${program} -eq 5]; then
+    box86_64
+elif [${program} -eq 11]; then
+    echo "not remove"
+elif [${program} -eq 22]; then
+    echo "not remove"
+elif [${program} -eq 33]; then
+    echo "not remove"
 elif [${program} -eq 44]; then
     remove_box86
 fi
@@ -74,7 +78,30 @@ function roblox() {
     cd ~/grapejuice
     python3 ./install.py
 }
+function box86_64() {
+    # box86 설치
+    sudo apt-get install cmake git build-essential gcc -y
+    sudo dpkg --add-architecture armhf
+    sudo apt update -y
+    sudo apt install gcc-arm-linux-gnueabihf libc6:armhf libncurses5:armhf libstdc++6:armhf
 
+    git clone https://github.com/ptitSeb/box86
+    cd box86
+    mkdir build; cd build; 
+    cmake .. -DRPI4ARM64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    make -j$(nproc)
+    sudo make install
+
+    #box86에 wine설치
+    cd ~;
+    mkdir ~/wine
+    wget https://www.playonlinux.com/wine/binaries/phoenicis/upstream-linux-x86/PlayOnLinux-wine-5.19-upstream-linux-x86.tar.gz;
+    tar -xf PlayOnLinux-wine-5.19-upstream-linux-x86.tar.gz -C ~/wine/
+
+    echo "export BOX86_PATH=~/wine/bin/" >> ~/.profile
+    echo "export BOX86_LD_LIBRARY_PATH=~/wine/lib/" >> ~/.profile
+    echo "export BOX86_LOG=1" >> ~/.profile
+}
 function box86() {
     # box86 설치
     sudo apt-get install cmake git python3 build-essential gcc -y
@@ -93,7 +120,6 @@ function box86() {
     echo "export BOX86_PATH=~/wine/bin/" >> ~/.profile
     echo "export BOX86_LD_LIBRARY_PATH=~/wine/lib/" >> ~/.profile
     echo "export BOX86_LOG=1" >> ~/.profile
-    echo 'alias wboot="box86 wine"' >> ~/.profile
 }
 
 function remove_box86() {

@@ -1,6 +1,7 @@
 # copy by https://gxmersam.blogspot.com thanks you
 root=/data/data/com.termux/files
 uroot=/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu
+termux-setup-storage
 # ****termux ubuntu 설치 및 설정 시작
 pkg update -y && pkg upgrade && pkg install wget proot-distro pulseaudio -y
 # termux sound set
