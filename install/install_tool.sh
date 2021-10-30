@@ -1,11 +1,9 @@
 function vscode() {
-    sudo apt install -y git python gcc g++ make libx11-dev libxkbfile-dev fakeroot rpm libsecret-1-dev
-    sudo apt install -y nodejs npm
-    git clone https://github.com/Microsoft/vscode.git
-    cd vscode
-    wget https://github.com/futurejones/code-oss-aarch64/raw/master/patches/v1.44.2/add_extensions.patch
-    git apply add_extensions.patch
-    yarn && yarn run gulp vscode-linux-arm64 && yarn run gulp vscode-linux-arm64-build-deb
+    wget https://update.code.visualstudio.com/1.50.1/linux-deb-arm64/stable -O code.deb
+    dpkg -i code.deb
+    sudo git config --global user.name "Jeon JongChan"
+    sudo git config --global user.email "loki377312@gmail.com"
+    vscode
 }
 
 function chromium() {
