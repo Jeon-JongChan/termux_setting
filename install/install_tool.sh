@@ -1,8 +1,8 @@
 function vscode() {
     wget https://update.code.visualstudio.com/1.50.1/linux-deb-arm64/stable -O code.deb
     dpkg -i code.deb
-    sudo git config --global user.name "Jeon JongChan"
-    sudo git config --global user.email "loki377312@gmail.com"
+    git config --global user.name "Jeon JongChan"
+    git config --global user.email "loki377312@gmail.com"
     vscode
 }
 
