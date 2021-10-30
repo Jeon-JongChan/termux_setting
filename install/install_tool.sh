@@ -40,7 +40,7 @@ function roblox() {
     sudo apt install -y git python3-pip python3-setuptools python3-wheel python3-dev pkg-config 
     sudo apt install -y libcairo2-dev gtk-update-icon-cache desktop-file-utils xdg-utils libgirepository1.0-dev gir1.2-gtk-3.0
 
-    git clone https://gitlab.com/brinkervii/grapejuice.git /tmp/grapejuice
+    git clone https://gitlab.com/brinkervii/grapejuice.git ~/grapejuice
     cd ~/grapejuice
     python3 ./install.py
 }
@@ -49,7 +49,7 @@ function box86_64() {
     sudo apt-get install cmake git build-essential gcc -y
     sudo dpkg --add-architecture armhf
     sudo apt update -y
-    sudo apt install gcc-arm-linux-gnueabihf libc6:armhf libncurses5:armhf libstdc++6:armhf
+    sudo apt install -y gcc-arm-linux-gnueabihf libc6:armhf libncurses5:armhf libstdc++6:armhf
 
     git clone https://github.com/ptitSeb/box86
     cd box86
